@@ -1,17 +1,17 @@
 {
-    "name": "PLUGIN_LOWER_NAME",
+    "name": "phonegap-plugin-web-share",
     "description": "",
     "version": "0.0.1",
-    "homepage": "",
+    "homepage": "https://github.com/phonegap/phonegap-plugin-web-share",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/phonegap/phonegap-plugin-web-share.git"
     },
     "bugs": {
         "url": ""
     },
     "cordova": {
-        "id": "PLUGIN_ID",
+        "id": "phonegap-plugin-web-share",
         "platforms": [
             "ios",
             "android",
@@ -25,8 +25,8 @@
     "engines":{
         "cordova" : ">=3.0.0"
     },
-    "author": "",
-    "license": "PLUGIN_LICENSE",
+    "author": "Vishal Mishra",
+    "license": "Apache-2.0",
     "scripts": {
         "test": "jasmine-node --color spec"
     },

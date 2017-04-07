@@ -1,5 +1,5 @@
 
-PLUGIN_NAME
+Phonegap-web-share-plugin
 ------------------------
 
-TODO: Describe what your plugin does, what platforms it supports, and how to use it.
+The phonegap web share plugin that conforms to W3C specs
