@@ -19,7 +19,7 @@
  *
  */
 /* jshint jasmine: true */
-/* global navigator */
+/* global navigator, done */
 exports.defineAutoTests = function() {
 
     describe('navigator.share', function() {
@@ -37,13 +37,21 @@ exports.defineAutoTests = function() {
   			  url: 'sample url'
 			};
 
-    		var promise = navigator.share(dict);
-    		expect(promise).toBeDefined();
-            expect(typeof promise.then).toBe('function');
-            console.log('here');
-            //done();
-
-
+            try {
+                var promise = navigator.share(dict);
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    fail(err);
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
     	});
     });
 
