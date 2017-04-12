@@ -53,8 +53,110 @@ exports.defineAutoTests = function() {
                 done();
             }
     	});
+
+        it ('share should resolve with only text', function(){
+    		var dict = {
+    		  text: 'sample text'
+			};
+
+            try {
+                var promise = navigator.share(dict);
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    console.log('passed with text');
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    fail(err);
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
+    	});
+
+        it ('share should resolve with only a url', function(){
+    		var dict = {
+    		  url: 'sample title'
+    		};
+
+            try {
+                var promise = navigator.share(dict);
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    console.log('passed with url');
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    fail(err);
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
+    	});
+
+        it ('share should resolve with only a title', function(){
+    		var dict = {
+    		  title: 'sample title'
+			};
+
+            try {
+                var promise = navigator.share(dict);
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    console.log('passed with title');
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    fail(err);
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
+    	});
+
+        it ('share should reject an empty options', function(){
+            try {
+                var promise = navigator.share({});
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    fail('something in options should be set');
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
+    	});
+
+        it ('share should reject an undefined options', function(){
+            try {
+                var promise = navigator.share();
+        		expect(promise).toBeDefined();
+                expect(typeof promise.then).toBe('function');
+                promise.then(function() {
+                    fail('options should not be undefined');
+                    done();
+                }, function(err) {
+                    expect(err).toBeDefined();
+                    done();
+                });
+            } catch (err) {
+                fail(err);
+                done();
+            }
+    	});
     });
-
-
-
-    };
+};
