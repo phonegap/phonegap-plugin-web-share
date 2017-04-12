@@ -24,11 +24,7 @@ exports.defineAutoTests = function() {
     
     describe('navigator', function() {
 
-        it('should be defined', function() {
-            expect(navigator).toBeDefined();
-        });
-
-        it('should have a `share` function', function() {
+        it('navigator should have a `share` method that returns a promise', function() {
             expect(navigator.share).toBeDefined();
             expect(typeof navigator.share).toBe('function');
         });
@@ -36,19 +32,27 @@ exports.defineAutoTests = function() {
         
     });
 
+    describe(' share should return a promise ', function(){
 
-    describe('Dictionary values', function() {
+    	it ('share should return a promise', function(){
 
-        it("should be defined", function() {
-            expect(dict).toBeDefined();
-        });
+    		var dict = {
+    		title = "sample title",
+  			text = "sample text",
+  			url = "sample url"
+			};
 
-        it("should have defined types", function() {
-            expect(dict['title']).toBeDefined();
-            expect(dict['text']).toBeDefined();
-            expect(dict['url']).toBeDefined();
-        });
-    });
+    		var promise = navigator.share(dict);
+    		expect(promise).toBeDefined();
+            expect(typeof promise.then).toBe('function');
+            console.log('here');
+            done();
+
+
+    	)};
+
+
+    )};
 
 
 

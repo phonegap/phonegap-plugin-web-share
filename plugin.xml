@@ -5,8 +5,8 @@
       version="0.0.1">
     <name>Web Share</name>
 
-    <js-module src="www/template.js" name="Template">
-        <clobbers target="Template" />
+    <js-module src="www/webshare.js" name="webshare">
+        <clobbers target="navigator.share" />
     </js-module>
     <dependency id="cordova-plugin-x-socialsharing"/>
 
