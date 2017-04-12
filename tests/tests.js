@@ -19,40 +19,33 @@
  *
  */
 /* jshint jasmine: true */
+/* global navigator */
 exports.defineAutoTests = function() {
 
-    
-    describe('navigator', function() {
-
+    describe('navigator.share', function() {
         it('navigator should have a `share` method that returns a promise', function() {
             expect(navigator.share).toBeDefined();
             expect(typeof navigator.share).toBe('function');
         });
-        
-        
     });
 
-    describe(' share should return a promise ', function(){
-
+    describe('share should return a promise ', function(){
     	it ('share should return a promise', function(){
-
     		var dict = {
-    		title = "sample title",
-  			text = "sample text",
-  			url = "sample url"
+    		  title: 'sample title',
+              text: 'sample text',
+  			  url: 'sample url'
 			};
 
     		var promise = navigator.share(dict);
     		expect(promise).toBeDefined();
             expect(typeof promise.then).toBe('function');
             console.log('here');
-            done();
+            //done();
 
 
-    	)};
-
-
-    )};
+    	});
+    });
 
 
 

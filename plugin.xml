@@ -9,5 +9,5 @@
         <clobbers target="navigator.share" />
     </js-module>
     <dependency id="cordova-plugin-x-socialsharing"/>
-
+    <dependency id="es6-promise-plugin"/>
 </plugin>

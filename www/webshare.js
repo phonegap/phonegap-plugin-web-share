@@ -1,8 +1,8 @@
 /* global cordova:false */
-/* globals window */
+/* globals window, Promise */
 
-var exec = require('cordova/exec'),
-    utils = require('cordova/utils');
+var exec = cordova.require('cordova/exec'),
+    utils = cordova.require('cordova/utils');
 
 //var eddy = require('eddy-share');
 
@@ -16,16 +16,17 @@ module.exports = function(sharedata) {
 
 	// 		//sample scenario to validate tests
 
-			if(sharedata.hasOwnProperty("title") || sharedata.hasOwnProperty("text") || sharedata.hasOwnProperty("url"))
-			{
+			if(sharedata.hasOwnProperty('title') ||
+                sharedata.hasOwnProperty('text') ||
+                sharedata.hasOwnProperty('url')) {
 				resolve();
 			}
-			else{
+			else {
 				reject();
 			}
 
-	 )};
+	 });
 
-	
+
 	return p;
-}
+};
