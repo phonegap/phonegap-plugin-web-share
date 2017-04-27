@@ -5,9 +5,5 @@
       version="0.0.1">
     <name>Web Share</name>
 
-    <js-module src="www/webshare.js" name="webshare">
-        <clobbers target="navigator.share" />
-    </js-module>
-    <dependency id="cordova-plugin-x-socialsharing"/>
-    <dependency id="es6-promise-plugin"/>
+    <dependency id="cordova-plugin-x-socialsharing" version="^5.1.8"/>
 </plugin>
